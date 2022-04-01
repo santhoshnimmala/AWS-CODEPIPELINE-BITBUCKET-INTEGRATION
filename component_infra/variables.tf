@@ -15,4 +15,3 @@ variable token {
   description = "varible for bitbucket token"
 }
 
-
