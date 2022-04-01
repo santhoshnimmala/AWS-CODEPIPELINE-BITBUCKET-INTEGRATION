@@ -14,6 +14,3 @@ variable token {
   default     = "XXXXXX-YYYY-ZZZZZZ"
   description = "varible for bitbucket token"
 }
-
-
-
