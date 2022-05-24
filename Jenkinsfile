@@ -7,7 +7,7 @@ pipeline {
 
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
 
-        choice(name: 'CHOICE', choices: ['Apply', 'Destroy', 'Update'],description: 'Pick An Action form following')
+        choice(name: 'CHOICE', choices: ['Apply', 'Destroy', 'Update'], defaultValue: 'Apply' ,description: 'Pick An Action form following')
     }
 
        
@@ -25,26 +25,26 @@ pipeline {
     
             steps {
 				script{
-					if (${params.CHOICE} == "Apply"){
+					
                 echo "Choice: ${params.CHOICE}"
 				}
                     
                 }
             }
-			}
+			
             
 
         stage('Destroy') {
             
             steps {
 			script{
-				if(${params.CHOICE} == "Destroy"){
+				
                 echo "Choice: ${params.CHOICE}"
                     
                 }
 				}
             }
-			}
+			
             
        
     }
