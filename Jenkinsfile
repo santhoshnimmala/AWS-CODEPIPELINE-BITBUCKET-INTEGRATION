@@ -23,7 +23,7 @@ pipeline {
             }
         stage('Deploy to AWS') {
              when {
-                expression { ${params.CHOICE} == 'Apply' }
+                expression { return  ${params.CHOICE} == 'Apply' }
             }
             steps {
                 echo "Choice: ${params.CHOICE}"
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Destroy') {
              when {
-                expression { ${params.CHOICE} == 'Destroy' }
+                expression { return  ${params.CHOICE} == 'Destroy' }
             }
             steps {
                 echo "Choice: ${params.CHOICE}"
