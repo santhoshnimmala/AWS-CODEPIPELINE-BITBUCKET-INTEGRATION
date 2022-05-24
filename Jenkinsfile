@@ -1,5 +1,17 @@
 pipeline {
     agent any
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+
+        choice(name: 'CHOICE', choices: ['Apply', 'Destroy', 'Update'], defaultValue: 'Apply' ,description: 'Pick An Action form following')
+    }
+
+       
+    
     stages {
         stage('Copy to s3') {
             steps {
@@ -8,6 +20,30 @@ pipeline {
                     
                 }
             }
+            
+        }
+        stage('Deploy to AWS') {
+             when {
+                expression { ${params.CHOICE} == 'Apply' }
+            }
+            steps {
+                echo "Choice: ${params.CHOICE}"
+                    
+                }
+            }
+            
+        }
+        stage('Destroy') {
+             when {
+                expression { ${params.CHOICE} == 'Destroy' }
+            }
+            steps {
+                echo "Choice: ${params.CHOICE}"
+                    
+                }
+            }
+            
         }
     }
-}
+    }
+
