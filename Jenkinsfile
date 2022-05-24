@@ -20,8 +20,7 @@ pipeline {
                     
                 }
             }
-            
-        }
+            }
         stage('Deploy to AWS') {
              when {
                 expression { ${params.CHOICE} == 'Apply' }
@@ -32,7 +31,7 @@ pipeline {
                 }
             }
             
-        }
+
         stage('Destroy') {
              when {
                 expression { ${params.CHOICE} == 'Destroy' }
@@ -43,7 +42,6 @@ pipeline {
                 }
             }
             
-        }
+       
     }
     }
-
