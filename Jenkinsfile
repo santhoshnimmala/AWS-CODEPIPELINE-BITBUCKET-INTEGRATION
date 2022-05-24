@@ -17,9 +17,11 @@ pipeline {
         }
 		stage('Deploy') {
             steps {
+			script{
                 if (params.CHOICE == 'Apply')
 				{
 					echo " i am here"
+				}
 				}
             }
         }
