@@ -16,6 +16,11 @@ pipeline {
             }
         }
 		stage('Deploy') {
+			when {
+        expression {
+            return params.CHOICE == 'Apply';
+        }
+    }
             steps {
 			script{
                 if (params.CHOICE == 'Apply')
