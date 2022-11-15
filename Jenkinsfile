@@ -26,6 +26,7 @@ pipeline {
                 if (params.CHOICE == 'Apply')
 				{
 					echo " i am here"
+					ls -lrt
 					python3 Convert.py
 				}
 				}
