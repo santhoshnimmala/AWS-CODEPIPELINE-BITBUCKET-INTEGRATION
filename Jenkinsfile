@@ -26,8 +26,8 @@ pipeline {
                 if (params.CHOICE == 'Apply')
 				{
 					echo " i am here"
-					ls -lrt
-					python3 Convert.py
+					sh "ls -lrt"
+					sh "python3 Convert.py"
 				}
 				}
             }
