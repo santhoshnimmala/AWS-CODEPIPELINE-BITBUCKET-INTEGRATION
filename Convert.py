@@ -1,6 +1,7 @@
 import os
 import subprocess
 
+
 cwd = os.getcwd()  # Get the current working directory (cwd)
 files = os.listdir(cwd)  # Get all the files in that directory
 print("Files in %r: %s" % (cwd, files))
@@ -16,6 +17,8 @@ for line in Lines:
     a.append(d)
 print(a)
 cmd = "aws servicecatalog provision-product --product-id prod-fhg67bjrz2lfq --provisioned-product-name 'mytestppname3' --provisioning-parameters {}".format(a)
+print(type(a))
+print(cmd)
 c=subprocess.call(cmd, shell=True)
 
 
