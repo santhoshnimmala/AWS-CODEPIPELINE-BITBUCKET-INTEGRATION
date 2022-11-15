@@ -1,4 +1,4 @@
-a=1
-b=2
-c=3
-d=4
+Murex Environment Zone=Dev
+Murex Environment Number=27
+Murex Environment Profile=medium
+SSH Key Name=Ansible
