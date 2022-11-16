@@ -9,7 +9,7 @@ print("Files in %r: %s" % (cwd, files))
 file1 = open('sample.txt','r')
 Lines = file1.readlines()
 a = [] 
-client = boto3.client('servicecatalog')
+client = boto3.client('servicecatalog',region_name='us-east-1')
 # Strips the newline character
 for line in Lines:
     d = {}
@@ -18,5 +18,5 @@ for line in Lines:
     a.append(d)
 print(a)
 cmd = "aws servicecatalog provision-product --product-id prod-fhg67bjrz2lfq --provisioned-product-name 'mytestppname3' --provisioning-parameters {}".format(a)
-response = client.client.provision_product(Region='us-east-1',ProductId="prod-fhg67bjrz2lfq",ProvisionedProductName='dev12',ProvisioningParameters=a)
+response = client.client.provision_product(,ProductId="prod-fhg67bjrz2lfq",ProvisionedProductName='dev12',ProvisioningParameters=a)
 print(response)
