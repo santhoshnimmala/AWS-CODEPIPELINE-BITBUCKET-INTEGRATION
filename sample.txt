@@ -1,4 +1,4 @@
 Murex Environment Zone=Dev
 Murex Environment Number=27
 Murex Environment Profile=medium
-SSH Key Name=Ansible
+SSH Key Name=test
