@@ -1,4 +1,4 @@
-pEnvZone=Dev
+pEnvZone=dev
 pEnvNumber=27
 pProfile=medium
 pKeyName=test
