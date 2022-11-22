@@ -18,5 +18,5 @@ for line in Lines:
     a.append(d)
 print(a)
 cmd = "aws servicecatalog provision-product --product-id prod-fhg67bjrz2lfq --provisioned-product-name 'mytestppname3' --provisioning-parameters {}".format(a)
-response = client.provision_product(ProductId="prod-fhg67bjrz2lfq",ProvisionedProductName='dev12', ProvisioningArtifactId='pa-yaowjwwqwb2ks',PathName='Murex Application Products', ProvisioningParameters=a)
+response = client.provision_product(ProductId="prod-fhg67bjrz2lfq",ProvisionedProductName=os.environ.get('BRANCH_NAME'), ProvisioningArtifactId='pa-yaowjwwqwb2ks',PathName='Murex Application Products', ProvisioningParameters=a)
 print(response)
