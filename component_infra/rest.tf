@@ -63,6 +63,3 @@ resource "aws_api_gateway_stage" "prod" {
   stage_name    = "prod"
 }
 
-data "aws_region" "current" {
-  
-}
