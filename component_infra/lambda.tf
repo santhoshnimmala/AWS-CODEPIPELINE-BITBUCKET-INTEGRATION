@@ -1,7 +1,7 @@
 resource aws_lambda_function lambda_function_bit {
   role             = aws_iam_role.lambda_exec_role.arn
   handler          = "integration.handler"
-  runtime          = "python3.6"
+  runtime          = "python3.9"
   filename         = "integration.zip"
   function_name    = "bitbucket_integrator"
   source_code_hash = filebase64sha256("integration.zip")
